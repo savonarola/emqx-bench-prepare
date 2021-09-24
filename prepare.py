@@ -14,13 +14,13 @@ def acl_43(n):
     return [
         {
             "login": f"u{n}",
-            "topic": "/#",
+            "topic": f"/a/{n}/#",
             "action": "pubsub",
             "access": "deny",
         },
         {
             "login": f"u{n}",
-            "topic": f"/c/{n}/#",
+            "topic": f"/b/{n}/#",
             "action": "pubsub",
             "access": "allow",
         },
@@ -31,13 +31,13 @@ def acl_42(n):
     return [
         {
             "login": f"u{n}",
-            "topic": "/#",
+            "topic": f"/a/{n}/#",
             "action": "pubsub",
             "allow": False,
         },
         {
             "login": f"u{n}",
-            "topic": f"/c/{n}/#",
+            "topic": f"/b/{n}/#",
             "action": "pubsub",
             "allow": True,
         },
