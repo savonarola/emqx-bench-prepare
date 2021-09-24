@@ -13,13 +13,13 @@ def user_42(n):
 def acl_43(n):
     return [
         {
-            "login": f"c{n}",
+            "login": f"u{n}",
             "topic": "/#",
             "action": "pubsub",
             "access": "deny",
         },
         {
-            "login": f"c{n}",
+            "login": f"u{n}",
             "topic": f"/c/{n}/#",
             "action": "pubsub",
             "access": "allow",
@@ -30,13 +30,13 @@ def acl_43(n):
 def acl_42(n):
     return [
         {
-            "login": f"c{n}",
+            "login": f"u{n}",
             "topic": "/#",
             "action": "pubsub",
             "allow": False,
         },
         {
-            "login": f"c{n}",
+            "login": f"u{n}",
             "topic": f"/c/{n}/#",
             "action": "pubsub",
             "allow": True,
@@ -83,5 +83,3 @@ acls_url = f"http://{opts.host}:{opts.port}/api/v4/{variant['acl_path']}"
 print(f"Posting {opts.count} acls to {acls_url}")
 result = requests.post(acls_url, json=acls, auth=("admin", "public"))
 result.raise_for_status()
-
-print(result.json())
