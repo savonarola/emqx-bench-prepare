@@ -81,5 +81,4 @@ acls = [acl for n in range(opts.count) for acl in acl_factory(n)]
 acls_url = f"http://{opts.host}:{opts.port}/api/v4/{variant['acl_path']}"
 
 print(f"Posting {opts.count} acls to {acls_url}")
-result = requests.post(acls_url, json=acls, auth=("admin", "public"))
-result.raise_for_status()
+requests.post(acls_url, json=acls, auth=("admin", "public")).raise_for_status()
