@@ -13,13 +13,13 @@ def user_42(n):
 def acl_43(n):
     return [
         {
-            "login": f"u{n}",
+            "username": f"u{n}",
             "topic": f"/a/{n}/#",
             "action": "pubsub",
             "access": "deny",
         },
         {
-            "login": f"u{n}",
+            "username": f"u{n}",
             "topic": f"/b/{n}/#",
             "action": "pubsub",
             "access": "allow",
